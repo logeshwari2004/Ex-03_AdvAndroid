@@ -1,4 +1,4 @@
-### EX NO : 03
+[1:53 PM, 11/15/2023] +919791101928: ### EX NO : 03
 ### DATE  : 
 # <p align="center"> Develop a simple application to play and control the audio file in android studio </p>
 
@@ -27,16 +27,44 @@ Step 6: Display message give in MainActivity file.
 
 Step 7: Save and run the application.
 
-## </br></br></br></br></br></br></br>PROGRAM:
+## </br></br></br></br></br…
+[1:54 PM, 11/15/2023] +919791101928: # Ex.No:5 Develop a simple application for proximity sensor using Sensor Manager in android studio.
 
-```
 
+## AIM:
+
+To develop a sensor application for proximity sensor using sensor manager in Android Studio.
+
+## EQUIPMENTS REQUIRED:
+
+Android Studio(Min.required Artic Fox)
+
+## ALGORITHM:
+
+Step 1: Open Android Stdio and then click on File -> New -> New project.
+
+Step 2: Then type the Application name as proximitysensor and click Next. 
+
+Step 3: Then select the Minimum SDK as shown below and click Next.
+
+Step 4: Then select the Empty Activity and click Next. Finally click Finish.
+
+Step 5: Design layout in activity_main.xml.
+
+Step 6: Display process of proximitysensor in android mobile devices.
+
+Step 7: Save and run the application.
+
+## PROGRAM:
+
+/*
+Program to print the process of proximitysensor in android mobile devices”.
 Developed by:LOGESHWARI.P
-Registeration Number : 212221230055
+Registeration Number :212221230055
+*/
 
-```
-### ActivityMain.xml :
-```
+### Activity_main.Xml:
+
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -46,115 +74,92 @@ Registeration Number : 212221230055
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Audio Controller"
+        android:id="@+id/text"
+        android:layout_width="299dp"
+        android:textSize="60dp"
+        android:layout_height="453dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.816" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-```
-### MainActivity.Java:
-```
-package com.example.audio3;
+### MainActivit.java:
 
+package com.example.proximitysensor;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.media.MediaPlayer;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.os.Environment;
-import android.view.View;
-import android.widget.Button;
-
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button start,pause,stop;
+    TextView sensorStatusTV;
+    SensorManager sensorManager;
+    Sensor proximitySensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        start=(Button)findViewById(R.id.button1);
-        pause=(Button)findViewById(R.id.button2);
-        stop=(Button)findViewById(R.id.button3);
-        //creating media player
+        sensorStatusTV = findViewById(R.id.text);
 
-        try{
-            //you can change the path, here path is external directory(e.g. sdcard) /Music/maine.mp3
+        // calling sensor service.
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
+        // from sensor service we are
+        // calling proximity sensor
+        proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
-            MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.audio);
-
-            start.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mp.start();
-
-                }
-            });
-            pause.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mp.pause();
-
-                }
-            });
-            pause.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mp.stop();
-
-                }
-            });
-
-        }catch(Exception e){e.printStackTrace();}
-
+        // handling the case if the proximity
+        // sensor is not present in users device.
+        if (proximitySensor == null) {
+            Toast.makeText(this, "No proximity sensor found in device.", Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            // registering our sensor with sensor manager.
+            sensorManager.registerListener(proximitySensorEventListener,
+                    proximitySensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
+
+    // calling the sensor event class to detect
+    // the change in data when sensor starts working.
+    SensorEventListener proximitySensorEventListener = new SensorEventListener() {
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            // method to check accuracy changed in sensor.
+        }
+
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            // check if the sensor type is proximity sensor.
+            if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+                if (event.values[0] == 0) {
+                    // here we are setting our status to our textview..
+                    // if sensor event return 0 then object is closed
+                    // to sensor else object is away from sensor.
+                    sensorStatusTV.setText("Near");
+                } else {
+                    sensorStatusTV.setText("Away");
+                }
+            }
+        }
+    };
 }
-```
-## OUTPUT:
-![282855201-ecac605c-000f-4a9c-9b4d-9dac6e544206](https://github.com/Haridharshini21500176/Ex-03_AdvAndroid/assets/94168395/41da586c-048f-446c-9e50-ae1d16b3c137)
+
+## OUTPUT
+
+![282862279-348a4d88-d2ed-405e-a7d9-1d32ac2d6f91](https://github.com/Haridharshini21500176/Ex_No_5_AdvProximity/assets/94168395/94a659c8-0d80-449b-a20f-4032459f05e2)
+
+
 
 ## RESULT
-Thus a Simple Android Application To Develop a simple application to play and control the audio file in android studio is developed and executed successfully.
+Thus a Simple Android Application to display the details of proximity sensor using sensor manager in Android Studio is developed and executed successfully.

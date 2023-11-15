@@ -29,12 +29,12 @@ Step 7: Save and run the application.
 
 ## </br></br></br></br></br></br></br>PROGRAM:
 
-/*
+```
 
 Developed by:LOGESHWARI.P
 Registeration Number : 212221230055
 
-
+```
 ### ActivityMain.xml :
 
 <?xml version="1.0" encoding="utf-8"?>

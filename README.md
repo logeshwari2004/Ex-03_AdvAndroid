@@ -26,12 +26,10 @@ Step 6: Display process of proximitysensor in android mobile devices.
 Step 7: Save and run the application.
 
 ## PROGRAM:
-
-/*
-Program to print the process of proximitysensor in android mobile devices”.
+```
 Developed by:LOGESHWARI.P
-Registeration Number :212221230055
-*/
+Registeration Number : 212221230055
+```
 
 ### Activity_main.Xml:
 ```

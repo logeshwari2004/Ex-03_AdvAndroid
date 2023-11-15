@@ -1,36 +1,6 @@
-[1:53 PM, 11/15/2023] +919791101928: ### EX NO : 03
+### EX NO : 03
 ### DATE  : 
-# <p align="center"> Develop a simple application to play and control the audio file in android studio </p>
-
-
-## AIM:
-
-To Develop a simple application to play and control the audio file in android studio.
-
-## EQUIPMENTS REQUIRED:
-
-Android Studio(Min.required Artic Fox)
-
-## ALGORITHM:
-
-Step 1: Open Android Stdio and then click on File -> New -> New project.
-
-Step 2: Then type the Application name as HelloWorld and click Next. 
-
-Step 3: Then select the Minimum SDK as shown below and click Next.
-
-Step 4: Then select the Empty Activity and click Next. Finally click Finish.
-
-Step 5: Design layout in activity_main.xml.
-
-Step 6: Display message give in MainActivity file.
-
-Step 7: Save and run the application.
-
-## </br></br></br></br></br…
-[1:54 PM, 11/15/2023] +919791101928: # Ex.No:5 Develop a simple application for proximity sensor using Sensor Manager in android studio.
-
-
+#Develop a simple application to play and control the audio file in android studio.
 ## AIM:
 
 To develop a sensor application for proximity sensor using sensor manager in Android Studio.

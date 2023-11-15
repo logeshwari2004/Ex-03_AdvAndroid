@@ -34,7 +34,7 @@ Registeration Number :212221230055
 */
 
 ### Activity_main.Xml:
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -56,9 +56,10 @@ Registeration Number :212221230055
         app:layout_constraintVertical_bias="0.816" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### MainActivit.java:
-
+```
 package com.example.proximitysensor;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 }
-
+```
 ## OUTPUT
 
 ![282862279-348a4d88-d2ed-405e-a7d9-1d32ac2d6f91](https://github.com/Haridharshini21500176/Ex_No_5_AdvProximity/assets/94168395/94a659c8-0d80-449b-a20f-4032459f05e2)
